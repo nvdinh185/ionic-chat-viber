@@ -25761,3 +25761,7 @@ page-chat-home .name {
 page-chat-home .list-card {
   border-bottom: 1px solid #dce0e8;
 }
+
+page-chat-home #search {
+  border: 1px solid gray;
+}

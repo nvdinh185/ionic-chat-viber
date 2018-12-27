@@ -1,16 +1,23 @@
 <ion-header>
   <ion-navbar>
+    <ion-buttons>
+      <button ion-fab color="royal" (click)="formAddRoom()">
+        <ion-icon name="add-circle" ios="ios-add-circle" md="md-add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
 
     <ion-buttons end *ngIf="slideIndex>0">
       <button ion-button icon-only color="royal" (click)="goToSlide(0)">
         <ion-icon name="arrow-back" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-title>
-      {{title}}
+    <ion-title style="text-align: center">
+      <ion-input id="search" placeholder="Tìm kiếm" *ngIf="slideIndex==0"></ion-input>
     </ion-title>
     <ion-buttons end>
-      <button (click)="goSetting()"><ion-icon name="settings" ios="ios-settings" md="md-settings"></ion-icon></button>
+      <button (click)="goSetting()">
+        <ion-icon name="settings" ios="ios-settings" md="md-settings"></ion-icon>
+      </button>
       <button ion-button icon-only color="royal" (click)="listUnread()">
         <ion-icon name="notifications" ios="ios-notifications" md="md-notifications"></ion-icon>
         <ion-badge color="danger" *ngIf="unreadCount > 0">{{ unreadCount }}</ion-badge>
@@ -24,25 +31,16 @@
     <!-- #id=0 home -->
     <ion-slide>
       <ion-card>
-        <ion-card-header>
-          Thêm nhóm
-          <button ion-button color="royal" (click)="formAddRoom()">
-            <ion-icon name="add-circle" ios="ios-add-circle" md="md-add-circle"></ion-icon>
+        <ion-list>
+          <button class="list-card" ion-item *ngFor="let room of rooms" (click)="goRoom(room)">
+            <ion-avatar item-start>
+              <img src="{{room.image?room.image:image_default}}">
+            </ion-avatar>
+            <h2 class="name">{{ room?.name }}</h2>
+            <p>{{ room?.message }}</p>
+            <ion-note class="time">{{ room?.time | date:'dd.MM hh:mm' }}</ion-note>
           </button>
-        </ion-card-header>
-
-        <ion-card-content>
-          <ion-list>
-            <button class="list-card" ion-item *ngFor="let room of rooms" (click)="goRoom(room)">
-              <ion-avatar item-start>
-                <img src="{{room.image?room.image:image_default}}">
-              </ion-avatar>
-              <h2 class="name">{{ room?.name }}</h2>
-              <p>{{ room?.message }}</p>
-              <ion-note class="time">{{ room?.time | date:'dd.MM hh:mm' }}</ion-note>
-            </button>
-          </ion-list>
-        </ion-card-content>
+        </ion-list>
       </ion-card>
 
     </ion-slide>
@@ -161,6 +159,28 @@
         <button ion-button type="button" round color="primary" (click)="sendMessage()" [disabled]="message === ''">
           <ion-icon name="undo"></ion-icon>
         </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="icon" *ngIf="slideIndex==0">
+      <ion-col col-2>
+        <p>Trò chuyện</p>
+        <ion-badge ion-button><ion-icon name="person"></ion-icon></ion-badge>
+      </ion-col>
+      <ion-col col-2>
+          <p>Cuộc gọi</p>
+          <ion-badge ion-button><ion-icon name="call"></ion-icon></ion-badge>
+      </ion-col>
+      <ion-col col-2>
+          <p>Danh bạ</p>
+          <ion-badge ion-button><ion-icon name="contact"></ion-icon></ion-badge>
+      </ion-col>
+      <ion-col col-2>
+          <p>Cộng đồng</p>
+          <ion-badge ion-button><ion-icon name="people"></ion-icon></ion-badge>
+      </ion-col>
+      <ion-col col-2>
+          <p>Thêm</p>
+          <ion-badge ion-button><ion-icon name="more"></ion-icon></ion-badge>
       </ion-col>
     </ion-row>
   </ion-toolbar>
