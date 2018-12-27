@@ -3,70 +3,65 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+
 import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { YoutubePage } from '../pages/youtube/youtube';
-import { ShopPage } from '../pages/shop/shop'
-import { BuyoutPage } from '../pages/buyout/buyout'
-import { HeaderPage } from '../pages/header/header'
-import { FooterPage } from '../pages/footer/footer'
-import { HocvienPage } from '../pages/hocvien/hocvien'
-import { DetailHvPage } from '../pages/detail-hv/detail-hv'
-import { LoginPage } from '../pages/login/login'
-import { RegisterPage } from '../pages/register/register'
-import { MuahoasessionPage } from '../pages/muahoasession/muahoasession'
-import { XemhoasessionPage } from '../pages/xemhoasession/xemhoasession'
+import { TestPage } from '../pages/test/test';
 
-import { GetHocVienProvider } from '../providers/get-hoc-vien/get-hoc-vien';
-import { PostUserProvider } from '../providers/post-user/post-user';
+
+import { StorageServiceModule } from 'angular-webstorage-service';
+import { ApiStorageService } from '../services/apiStorageService';
+
+import { ApiAuthService } from '../services/apiAuthService';
+import { ApiImageService } from '../services/apiImageService';
+import { ApiChattingService } from '../services/apiChattingService';
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RequestInterceptor } from '../interceptors/requestInterceptor';
+import { ResponseInterceptor } from '../interceptors/responseInterceptor';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    YoutubePage,
-    ShopPage,
-    BuyoutPage,
-    HeaderPage,
-    FooterPage,
-    HocvienPage,
-    DetailHvPage,
-    LoginPage,
-    RegisterPage,
-    MuahoasessionPage,
-    XemhoasessionPage
+    TestPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    StorageServiceModule,
     HttpClientModule,
-    HttpModule
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    YoutubePage,
-    ShopPage,
-    BuyoutPage,
-    HeaderPage,
-    FooterPage,
-    HocvienPage,
-    DetailHvPage,
-    LoginPage,
-    RegisterPage,
-    MuahoasessionPage,
-    XemhoasessionPage
+    TestPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GetHocVienProvider,
-    PostUserProvider
+    ApiAuthService,
+    ApiImageService,
+    ApiStorageService,
+    ApiChattingService,
+    RequestInterceptor,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ResponseInterceptor,
+      multi: true
+    },
+    {
+      provide: ErrorHandler, 
+      useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
