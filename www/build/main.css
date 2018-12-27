@@ -25760,8 +25760,9 @@ page-chat-home .name {
 
 page-chat-home .list-card {
   border-bottom: 1px solid #dce0e8;
+  background-color: #abd6c8;
 }
 
 page-chat-home #search {
-  border: 1px solid gray;
+  border: 1px solid #ccc4c4;
 }
