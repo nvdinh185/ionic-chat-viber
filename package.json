@@ -6,9 +6,18 @@
   "private": true,
   "scripts": {
     "start": "node server.js"
-  },  
-  
-  "cordova": {    
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    
+  },
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      
+    },
     "platforms": [
       "browser"
     ]
