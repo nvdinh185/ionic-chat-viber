@@ -11,7 +11,7 @@
     
   },
   "devDependencies": {
-    
+    "@ionic/app-scripts": "3.2.1"
   },
   "description": "An Ionic project",
   "cordova": {
