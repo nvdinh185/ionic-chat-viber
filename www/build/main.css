@@ -25702,11 +25702,12 @@ page-chat-home .other-avatar {
 }
 
 page-chat-home .list-avatar-page ion-note {
-  font-size: 12px;
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
   margin-top: 14px;
+  color: #f15c82;
+  float: right;
 }
 
 page-chat-home .swiper-slide {

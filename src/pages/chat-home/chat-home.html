@@ -1,24 +1,25 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons>
-      <button ion-fab color="royal" (click)="formAddRoom()">
+    <ion-buttons *ngIf="slideIndex==0">
+      <button ion-fab (click)="formAddRoom()">
         <ion-icon name="add-circle" ios="ios-add-circle" md="md-add-circle"></ion-icon>
       </button>
     </ion-buttons>
 
-    <ion-buttons end *ngIf="slideIndex>0">
-      <button ion-button icon-only color="royal" (click)="goToSlide(0)">
+    <ion-buttons start *ngIf="slideIndex>0">
+      <button ion-button icon-only (click)="goToSlide(0)">
         <ion-icon name="arrow-back" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title style="text-align: center">
+      {{ title }}
       <ion-input id="search" placeholder="Tìm kiếm" *ngIf="slideIndex==0"></ion-input>
     </ion-title>
     <ion-buttons end>
       <button (click)="goSetting()">
         <ion-icon name="settings" ios="ios-settings" md="md-settings"></ion-icon>
       </button>
-      <button ion-button icon-only color="royal" (click)="listUnread()">
+      <button ion-button icon-only (click)="listUnread()">
         <ion-icon name="notifications" ios="ios-notifications" md="md-notifications"></ion-icon>
         <ion-badge color="danger" *ngIf="unreadCount > 0">{{ unreadCount }}</ion-badge>
       </button>
@@ -38,16 +39,15 @@
             </ion-avatar>
             <h2 class="name">{{ room?.name }}</h2>
             <p>{{ room?.message }}</p>
-            <ion-note class="time">{{ room?.time | date:'dd.MM hh:mm' }}</ion-note>
+            <ion-note>{{ room?.time | date:'dd.MM hh:mm' }}</ion-note>
           </button>
         </ion-list>
       </ion-card>
-
     </ion-slide>
 
 
     <!-- #id=1 chatting -->
-    <ion-slide id="contentMessages">
+    <ion-slide>
       <ion-grid>
         <ion-row *ngFor="let message of messages">
           <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username !== user?.username">
@@ -164,23 +164,33 @@
     <ion-row class="icon" *ngIf="slideIndex==0">
       <ion-col col-2>
         <p>Trò chuyện</p>
-        <ion-badge ion-button><ion-icon name="person"></ion-icon></ion-badge>
+        <ion-badge ion-button>
+          <ion-icon name="person"></ion-icon>
+        </ion-badge>
       </ion-col>
       <ion-col col-2>
-          <p>Cuộc gọi</p>
-          <ion-badge ion-button><ion-icon name="call"></ion-icon></ion-badge>
+        <p>Cuộc gọi</p>
+        <ion-badge ion-button>
+          <ion-icon name="call"></ion-icon>
+        </ion-badge>
       </ion-col>
       <ion-col col-2>
-          <p>Danh bạ</p>
-          <ion-badge ion-button><ion-icon name="contact"></ion-icon></ion-badge>
+        <p>Danh bạ</p>
+        <ion-badge ion-button>
+          <ion-icon name="contact"></ion-icon>
+        </ion-badge>
       </ion-col>
       <ion-col col-2>
-          <p>Cộng đồng</p>
-          <ion-badge ion-button><ion-icon name="people"></ion-icon></ion-badge>
+        <p>Cộng đồng</p>
+        <ion-badge ion-button>
+          <ion-icon name="people"></ion-icon>
+        </ion-badge>
       </ion-col>
       <ion-col col-2>
-          <p>Thêm</p>
-          <ion-badge ion-button><ion-icon name="more"></ion-icon></ion-badge>
+        <p>Thêm</p>
+        <ion-badge ion-button>
+          <ion-icon name="more"></ion-icon>
+        </ion-badge>
       </ion-col>
     </ion-row>
   </ion-toolbar>
