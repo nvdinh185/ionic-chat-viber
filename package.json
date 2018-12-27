@@ -41,13 +41,10 @@
     "zone.js": "0.8.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "3.2.1"
+    
   },
   "description": "An Ionic project",
   "cordova": {
-    "plugins": {
-      
-    },
     "platforms": [
       "browser"
     ]
