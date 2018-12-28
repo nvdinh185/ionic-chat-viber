@@ -1,12 +1,5 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      trong test thu
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
- Day la trang home
- <button ion-button (click)="goChat()">Go to Chat</button>
-</ion-content>
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="ChatHomePage" tabIcon="call"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Test" tabIcon="information-circle"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+</ion-tabs>

@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TestPage } from '../pages/test/test';
+import { ChatHomePage } from '../pages/chat-home/chat-home';
 
 
 import { StorageServiceModule } from 'angular-webstorage-service';
@@ -27,7 +28,8 @@ import { ResponseInterceptor } from '../interceptors/responseInterceptor';
   declarations: [
     MyApp,
     HomePage,
-    TestPage
+    TestPage,
+    ChatHomePage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { ResponseInterceptor } from '../interceptors/responseInterceptor';
   entryComponents: [
     MyApp,
     HomePage,
-    TestPage
+    TestPage,
+    ChatHomePage
   ],
   providers: [
     StatusBar,

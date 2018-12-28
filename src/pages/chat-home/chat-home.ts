@@ -26,7 +26,7 @@ export class ChatHomePage {
   @ViewChild(Slides) slides: Slides;
 
   slideIndex = 0;
-  title = 'CHAT HOME';
+  title = "CHAT HOME";
   image_default = './assets/imgs/group.jpeg';
 
   message: string = '';
@@ -50,8 +50,6 @@ export class ChatHomePage {
     private apiStorage: ApiStorageService) { }
 
   ngOnInit() {
-    console.log('ngOnInit() - chat-home.ts!');
-
     this.addFromGroup = this.formBuilder.group({
       room_name: '',
       image: '',
@@ -79,11 +77,11 @@ export class ChatHomePage {
     this.events.subscribe(chatConfig.event_chat_setting, (() => {
       this.goToSlide(slideSelected.setting);
     }));
-
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad');
+    console.log('ionViewDidLoad'+this.slideIndex);
   }
 
   ionViewWillLeave() {
@@ -105,16 +103,24 @@ export class ChatHomePage {
 
 
   goToSlide(i) {
-    if(i==0) this.title = "CHAT HOME";
     this.slides.slideTo(i, 500);
   }
 
   slideChanged() {
     this.slideIndex = this.slides.getActiveIndex();
+    switch (this.slideIndex) {
+      case 0: this.title = "CHAT HOME";
+      break;
+      case 1: this.title = "CHATING";
+      break;
+      case 2: this.title = "CREATE GROUP";
+      break;
+      case 3: this.title = "SETTING";
+      break;
+    }
   }
 
   formAddRoom() {
-    this.title = "THÊM NHÓM";
     this.goToSlide(2);
     this.addFromGroup = this.formBuilder.group({
       room_name: '',
@@ -124,8 +130,7 @@ export class ChatHomePage {
     });
   }
 
-  goSetting(){
-    this.title = "SETTING";
+  goSetting() {
     this.goToSlide(3);
   }
 
@@ -153,7 +158,6 @@ export class ChatHomePage {
   }
 
   goRoom(room) {
-    this.title = "CHATTING";
     this.room = room;
 
     this.messages = this.apiStorage.getUserRoomMessages(this.user, this.room);
@@ -181,7 +185,7 @@ export class ChatHomePage {
       text: this.message,
       created: new Date().getTime()
     });
-    
+
     this.messages.push({
       user: { username: 'CUONG', image: '', nickname: 'cuongdq' },
       text: 'HII: ' + this.message,
@@ -189,10 +193,21 @@ export class ChatHomePage {
     });
 
     this.room.messages = this.room.messages.concat(this.messages);
-    
+
     this.apiStorage.saveUserRoomMessages(this.user, this.room);
 
     this.message = '';
     this.room.messages = [];
+  }
+
+  getItems(event) {
+    this.rooms = this.apiStorage.getUserRooms(this.user);
+    var val = event.target.value;
+
+    if (val && val.trim() != '') {
+      this.rooms = this.rooms.filter((room) => {
+        return (room.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
 }

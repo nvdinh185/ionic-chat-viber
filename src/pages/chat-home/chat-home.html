@@ -13,7 +13,7 @@
     </ion-buttons>
     <ion-title style="text-align: center">
       {{ title }}
-      <ion-input id="search" placeholder="Tìm kiếm" *ngIf="slideIndex==0"></ion-input>
+      <ion-searchbar (ionInput)="getItems($event)" *ngIf="slideIndex==0"></ion-searchbar>
     </ion-title>
     <ion-buttons end>
       <button (click)="goSetting()">
@@ -141,7 +141,6 @@
     </ion-slide>
 
     <!-- #id=4 -->
-
     <!-- #id=5 -->
     <!-- #id=6 -->
   </ion-slides>
@@ -161,37 +160,12 @@
         </button>
       </ion-col>
     </ion-row>
-    <ion-row class="icon" *ngIf="slideIndex==0">
-      <ion-col col-2>
-        <p>Trò chuyện</p>
-        <ion-badge ion-button>
-          <ion-icon name="person"></ion-icon>
-        </ion-badge>
-      </ion-col>
-      <ion-col col-2>
-        <p>Cuộc gọi</p>
-        <ion-badge ion-button>
-          <ion-icon name="call"></ion-icon>
-        </ion-badge>
-      </ion-col>
-      <ion-col col-2>
-        <p>Danh bạ</p>
-        <ion-badge ion-button>
-          <ion-icon name="contact"></ion-icon>
-        </ion-badge>
-      </ion-col>
-      <ion-col col-2>
-        <p>Cộng đồng</p>
-        <ion-badge ion-button>
-          <ion-icon name="people"></ion-icon>
-        </ion-badge>
-      </ion-col>
-      <ion-col col-2>
-        <p>Thêm</p>
-        <ion-badge ion-button>
-          <ion-icon name="more"></ion-icon>
-        </ion-badge>
-      </ion-col>
+    <ion-row>
+      <ion-tabs>
+        <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+        <ion-tab [root]="tab2Root" tabTitle="Test" tabIcon="information-circle"></ion-tab>
+        <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+      </ion-tabs>
     </ion-row>
   </ion-toolbar>
 </ion-footer>
