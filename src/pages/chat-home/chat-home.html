@@ -1,21 +1,12 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons *ngIf="slideIndex==0">
-      <button ion-fab (click)="formAddRoom()">
+    <ion-item>
+      <button *ngIf="slideIndex==0" (click)="formAddRoom()">
         <ion-icon name="add-circle" ios="ios-add-circle" md="md-add-circle"></ion-icon>
       </button>
-    </ion-buttons>
-
-    <ion-buttons start *ngIf="slideIndex>0">
-      <button ion-button icon-only (click)="goToSlide(0)">
+      <button (click)="goToSlide(0)" *ngIf="slideIndex>0">
         <ion-icon name="arrow-back" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
       </button>
-    </ion-buttons>
-    <ion-title style="text-align: center">
-      {{ title }}
-      <ion-searchbar (ionInput)="getItems($event)" *ngIf="slideIndex==0"></ion-searchbar>
-    </ion-title>
-    <ion-buttons end>
       <button (click)="goSetting()">
         <ion-icon name="settings" ios="ios-settings" md="md-settings"></ion-icon>
       </button>
@@ -23,7 +14,9 @@
         <ion-icon name="notifications" ios="ios-notifications" md="md-notifications"></ion-icon>
         <ion-badge color="danger" *ngIf="unreadCount > 0">{{ unreadCount }}</ion-badge>
       </button>
-    </ion-buttons>
+      <button>{{ title }}</button>
+    </ion-item>
+      <ion-searchbar (ionInput)="getItems($event)" *ngIf="slideIndex==0"></ion-searchbar>
   </ion-navbar>
 </ion-header>
 
@@ -44,7 +37,6 @@
         </ion-list>
       </ion-card>
     </ion-slide>
-
 
     <!-- #id=1 chatting -->
     <ion-slide>
@@ -159,13 +151,6 @@
           <ion-icon name="undo"></ion-icon>
         </button>
       </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-tabs>
-        <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-        <ion-tab [root]="tab2Root" tabTitle="Test" tabIcon="information-circle"></ion-tab>
-        <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
-      </ion-tabs>
-    </ion-row>
+    </ion-row>  
   </ion-toolbar>
 </ion-footer>
