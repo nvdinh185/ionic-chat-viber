@@ -1,12 +1,14 @@
 <ion-header>
-  <ion-navbar>
-    <ion-item>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
       <button *ngIf="slideIndex==0" (click)="formAddRoom()">
         <ion-icon name="add-circle" ios="ios-add-circle" md="md-add-circle"></ion-icon>
       </button>
       <button (click)="goToSlide(0)" *ngIf="slideIndex>0">
         <ion-icon name="arrow-back" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
       </button>
+    </ion-buttons>
+    <ion-buttons end>
       <button (click)="goSetting()">
         <ion-icon name="settings" ios="ios-settings" md="md-settings"></ion-icon>
       </button>
@@ -14,10 +16,10 @@
         <ion-icon name="notifications" ios="ios-notifications" md="md-notifications"></ion-icon>
         <ion-badge color="danger" *ngIf="unreadCount > 0">{{ unreadCount }}</ion-badge>
       </button>
-      <button>{{ title }}</button>
-    </ion-item>
-      <ion-searchbar (ionInput)="getItems($event)" *ngIf="slideIndex==0"></ion-searchbar>
-  </ion-navbar>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+    <ion-searchbar (ionInput)="getItems($event)" *ngIf="slideIndex==0"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content class="list-avatar-page">
@@ -139,8 +141,8 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <ion-row class="message_row" *ngIf="slideIndex==1">
+  <ion-toolbar *ngIf="slideIndex==1">
+    <ion-row class="message_row">
       <ion-col col-10>
         <ion-item no-lines>
           <ion-input type="text" placeholder="Gõ nội dung tin nhắn cần gửi" [(ngModel)]="message" (keyup.enter)="sendMessage()"></ion-input>
@@ -151,6 +153,6 @@
           <ion-icon name="undo"></ion-icon>
         </button>
       </ion-col>
-    </ion-row>  
+    </ion-row>
   </ion-toolbar>
 </ion-footer>

@@ -21092,7 +21092,7 @@ ion-navbar.toolbar {
   text-align: center;
   font-size: 1.7rem;
   font-weight: 600;
-  color: #000;
+  color: #fff;
   pointer-events: auto;
 }
 
@@ -25760,19 +25760,6 @@ page-chat-home .name {
 }
 
 page-chat-home .list-card {
-  border-bottom: 1px solid #dce0e8;
+  border-bottom: 2px solid #dce0e8;
   background-color: #abd6c8;
-}
-
-page-chat-home ion-searchbar {
-  border: 1px solid #a873a1;
-}
-
-page-chat-home ion-navbar {
-  border: 1px solid blue;
-}
-
-page-chat-home ion-navbar button {
-  border: 1px solid red;
-  background-color: #2289a8;
 }

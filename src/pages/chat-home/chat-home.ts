@@ -26,7 +26,7 @@ export class ChatHomePage {
   @ViewChild(Slides) slides: Slides;
 
   slideIndex = 0;
-  title = "CHAT HOME";
+  title;
   image_default = './assets/imgs/group.jpeg';
 
   message: string = '';
@@ -109,7 +109,7 @@ export class ChatHomePage {
   slideChanged() {
     this.slideIndex = this.slides.getActiveIndex();
     switch (this.slideIndex) {
-      case 0: this.title = "CHAT HOME";
+      case 0: this.title = "";
       break;
       case 1: this.title = "CHATING";
       break;
