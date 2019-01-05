@@ -41,12 +41,12 @@
           </button>
         </ion-list>
       </ion-card>
-      <button ion-button (click)="deleteRoom()">DELETE ROOM</button>
+      <button ion-button (click)="deleteRoom()" *ngIf="rooms.length>0">DELETE ROOM</button>
     </ion-slide>
 
     <!-- #id=1 chatting -->
     <ion-slide>
-      <button ion-button (click)="deleteMessage()">DELETE MESSAGE</button>
+      <button ion-button (click)="deleteMessage()" *ngIf="messages.length>0">DELETE MESSAGE</button>
       <ion-grid>
         <ion-row *ngFor="let message of messages">
           <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username !== user?.username">
