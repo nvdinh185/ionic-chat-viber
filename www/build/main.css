@@ -25674,10 +25674,6 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-page-chat-home .footer-background {
-  background-color: #0c056b;
-}
-
 page-chat-home .item-settings {
   color: #9c2626;
   margin-bottom: 1px;

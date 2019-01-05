@@ -26,7 +26,7 @@ export class ChatHomePage {
   @ViewChild(Slides) slides: Slides;
 
   slideIndex = 0;
-  title;
+  title = "CHAT HOME";
   image_default = './assets/imgs/group.jpeg';
 
   message: string = '';
@@ -77,11 +77,11 @@ export class ChatHomePage {
     this.events.subscribe(chatConfig.event_chat_setting, (() => {
       this.goToSlide(slideSelected.setting);
     }));
-    
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad'+this.slideIndex);
+    console.log('ionViewDidLoad' + this.slideIndex);
   }
 
   ionViewWillLeave() {
@@ -109,14 +109,14 @@ export class ChatHomePage {
   slideChanged() {
     this.slideIndex = this.slides.getActiveIndex();
     switch (this.slideIndex) {
-      case 0: this.title = "";
-      break;
+      case 0: this.show?this.title = "":this.title = "CHAT HOME";
+        break;
       case 1: this.title = "CHATING";
-      break;
+        break;
       case 2: this.title = "CREATE GROUP";
-      break;
+        break;
       case 3: this.title = "SETTING";
-      break;
+        break;
     }
   }
 
@@ -209,5 +209,20 @@ export class ChatHomePage {
         return (room.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  deleteRoom() {
+    this.apiStorage.deleteUserRooms(this.user);
+    alert("Da xoa!");
+  }
+  deleteMessage() {
+    this.room.messages = [];
+    this.apiStorage.saveUserRoomMessages(this.user, this.room);
+    alert("Da xoa!");
+  }
+  show: boolean = false;
+  showSearch() {
+    this.show = !this.show;
+    this.show?this.title = "":this.title = "CHAT HOME";
   }
 }
