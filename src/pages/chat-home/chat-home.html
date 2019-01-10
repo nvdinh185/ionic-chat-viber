@@ -16,8 +16,8 @@
         <ion-icon name="settings" ios="ios-settings" md="md-settings"></ion-icon>
       </button>
       <button ion-button (click)="listUnread()">
-          <ion-icon name="notifications" ios="ios-notifications" md="md-notifications"></ion-icon>
-          <ion-badge color="danger" *ngIf="unreadCount > 0">{{ unreadCount }}</ion-badge>
+        <ion-icon name="notifications" ios="ios-notifications" md="md-notifications"></ion-icon>
+        <ion-badge color="danger" *ngIf="unreadCount > 0">{{ unreadCount }}</ion-badge>
       </button>
     </ion-buttons>
     <ion-title>{{ title }}</ion-title>
@@ -26,22 +26,32 @@
 </ion-header>
 
 <ion-content class="list-avatar-page">
-  <ion-slides (ionSlideDidChange)="slideChanged()">
+  <ion-slides (ionSlideDidChange)="slideChanged()" (lockSwipes)="true">
     <!-- #id=0 home -->
     <ion-slide>
       <ion-card>
         <ion-list>
-          <button class="list-card" ion-item *ngFor="let room of rooms" (click)="goRoom(room)">
-            <ion-avatar item-start>
-              <img src="{{room.image?room.image:image_default}}">
-            </ion-avatar>
-            <h2 class="name">{{ room?.name }}</h2>
-            <p>{{ room?.message }}</p>
-            <ion-note>{{ room?.time | date:'dd.MM hh:mm' }}</ion-note>
-          </button>
+          <ion-item-sliding *ngFor="let room of rooms">
+            <ion-item>
+              <button class="list-card" ion-item (click)="goRoom(room)">
+                <ion-avatar item-start>
+                  <img src="{{room.image?room.image:image_default}}">
+                </ion-avatar>
+                <h2 class="name">{{ room?.name }}</h2>
+                <p>{{ room?.message }}</p>
+                <ion-note>{{ room?.time | date:'dd.MM hh:mm' }}</ion-note>
+              </button>
+            </ion-item>
+            <ion-item-options side="right">
+              <button ion-button color="danger" (click)="deleteRoom(room.name)">
+                <ion-icon name="trash" ios="ios-trash"></ion-icon>
+                Delete
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
         </ion-list>
       </ion-card>
-      <button ion-button (click)="deleteRoom()" *ngIf="rooms.length>0">DELETE ROOM</button>
+      <button ion-button (click)="deleteAllRoom()" *ngIf="rooms.length>0">DELETE ALL ROOM</button>
     </ion-slide>
 
     <!-- #id=1 chatting -->
@@ -63,7 +73,7 @@
             <br>
             <div class="time">{{message?.created | date:'dd.MM hh:mm'}}</div>
           </ion-col>
-          
+
           <ion-col class="message my_message" offset-1 col-9 *ngIf="message?.user?.username === user?.username">
             <div class="nick-name">{{ message?.user?.username }}:</div>
             <br>
@@ -80,6 +90,7 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+
     </ion-slide>
 
 

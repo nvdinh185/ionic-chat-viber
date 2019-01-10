@@ -211,7 +211,7 @@ export class ChatHomePage {
     }
   }
 
-  deleteRoom() {
+  deleteAllRoom() {
     this.apiStorage.deleteUserRooms(this.user);
     alert("Da xoa!");
   }
@@ -224,5 +224,8 @@ export class ChatHomePage {
   showSearch() {
     this.show = !this.show;
     this.show?this.title = "":this.title = "CHAT HOME";
+  }
+  deleteRoom(name){
+    console.log(name);
   }
 }
