@@ -26,7 +26,7 @@
 </ion-header>
 
 <ion-content class="list-avatar-page">
-  <ion-slides (ionSlideDidChange)="slideChanged()" (lockSwipes)="true">
+  <ion-slides (ionSlideDidChange)="slideChanged()">
     <!-- #id=0 home -->
     <ion-slide>
       <ion-card>
@@ -62,7 +62,8 @@
           <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username !== user?.username">
             <ion-item class="other-avatar">
               <ion-avatar item-start>
-                <img src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf('://')>0?message?.user?.image:(authenticationServer + '/get-avatar/' + message?.user?.image + '?token=' + token):image_default}}" />
+                <img
+                  src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf('://')>0?message?.user?.image:(authenticationServer + '/get-avatar/' + message?.user?.image + '?token=' + token):image_default}}" />
               </ion-avatar>
             </ion-item>
           </ion-col>
@@ -84,7 +85,8 @@
           <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username === user?.username">
             <ion-item class="other-avatar">
               <ion-avatar item-start>
-                <img src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf('://')>0?message?.user?.image:(authenticationServer + '/get-avatar/' + message?.user?.image + '?token=' + token):image_default}}" />
+                <img
+                  src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf('://')>0?message?.user?.image:(authenticationServer + '/get-avatar/' + message?.user?.image + '?token=' + token):image_default}}" />
               </ion-avatar>
             </ion-item>
           </ion-col>
@@ -150,9 +152,6 @@
       </ion-list>
     </ion-slide>
 
-    <!-- #id=4 -->
-    <!-- #id=5 -->
-    <!-- #id=6 -->
   </ion-slides>
 </ion-content>
 
@@ -161,7 +160,8 @@
     <ion-row class="message_row">
       <ion-col col-10>
         <ion-item no-lines>
-          <ion-input type="text" placeholder="Gõ nội dung tin nhắn cần gửi" [(ngModel)]="message" (keyup.enter)="sendMessage()"></ion-input>
+          <ion-input type="text" placeholder="Gõ nội dung tin nhắn cần gửi" [(ngModel)]="message"
+            (keyup.enter)="sendMessage()"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col col-2>

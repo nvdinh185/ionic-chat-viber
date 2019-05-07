@@ -16,7 +16,6 @@ var slideSelected = {
   setting: 3,
 }
 
-@IonicPage()
 @Component({
   selector: 'page-chat-home',
   templateUrl: 'chat-home.html'
@@ -50,6 +49,7 @@ export class ChatHomePage {
     private apiStorage: ApiStorageService) { }
 
   ngOnInit() {
+    this.slides.lockSwipes(true);
     this.addFromGroup = this.formBuilder.group({
       room_name: '',
       image: '',
@@ -59,10 +59,13 @@ export class ChatHomePage {
 
     this.rooms = this.apiStorage.getUserRooms(this.user);
 
-    this.getRoomChating().subscribe(data => {
+    this.getObserverable().subscribe(data => {
       console.log('Observerable sau 5 giay: ', data);
     })
 
+    this.getPromise().then(data => {
+      console.log('Promise sau 5 giay: ', data);
+    })
 
     //su dung truyen du lieu tu form a-->b ben fom b phai khai dung su kien thi moi
     this.events.publish(chatConfig.event_register_room, { data: 'chat' });
@@ -77,7 +80,6 @@ export class ChatHomePage {
     this.events.subscribe(chatConfig.event_chat_setting, (() => {
       this.goToSlide(slideSelected.setting);
     }));
-
   }
 
   ionViewDidLoad() {
@@ -88,7 +90,7 @@ export class ChatHomePage {
     console.log('this.socket.disconnect()');
   }
 
-  getRoomChating() {
+  getObserverable() {
     let observable = new Observable(observer => {
       setTimeout(() => {
         observer.next({
@@ -100,16 +102,25 @@ export class ChatHomePage {
     return observable;
   }
 
-
+  getPromise() {
+    let promise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("123")
+      }, 5000);
+    });
+    return promise;
+  }
 
   goToSlide(i) {
+    this.slides.lockSwipes(false);
     this.slides.slideTo(i, 500);
+    this.slides.lockSwipes(true);
   }
 
   slideChanged() {
     this.slideIndex = this.slides.getActiveIndex();
     switch (this.slideIndex) {
-      case 0: this.show?this.title = "":this.title = "CHAT HOME";
+      case 0: this.show ? this.title = "" : this.title = "CHAT HOME";
         break;
       case 1: this.title = "CHATING";
         break;
@@ -121,13 +132,13 @@ export class ChatHomePage {
   }
 
   formAddRoom() {
-    this.goToSlide(2);
     this.addFromGroup = this.formBuilder.group({
       room_name: '',
       image: '',
       message: '',
       time: new Date().getTime()
     });
+    this.goToSlide(2);
   }
 
   goSetting() {
@@ -159,11 +170,10 @@ export class ChatHomePage {
 
   goRoom(room) {
     this.room = room;
-
     this.messages = this.apiStorage.getUserRoomMessages(this.user, this.room);
-
     this.goToSlide(slideSelected.chatting);
   }
+
   onSubmit() {
     this.rooms.push({
       name: this.addFromGroup.value.room_name,
@@ -181,7 +191,7 @@ export class ChatHomePage {
 
   sendMessage() {
     this.messages.push({
-      user: { username: this.user.username, image: this.user.image, nickname: this.user.nickname },
+      user: this.user,
       text: this.message,
       created: new Date().getTime()
     });
@@ -223,9 +233,9 @@ export class ChatHomePage {
   show: boolean = false;
   showSearch() {
     this.show = !this.show;
-    this.show?this.title = "":this.title = "CHAT HOME";
+    this.show ? this.title = "" : this.title = "CHAT HOME";
   }
-  deleteRoom(name){
+  deleteRoom(name) {
     console.log(name);
   }
 }

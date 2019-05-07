@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController, Events } from 'ionic-angular';
 
 import { ChatHomePage } from '../chat-home/chat-home';
 import { TestPage } from '../test/test';
@@ -9,9 +8,7 @@ import { TestPage } from '../test/test';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController, private events: Events) { }
+  constructor() {}
   tab1Root = ChatHomePage;
   tab2Root = TestPage;
-  tab3Root = ChatHomePage;
 }
