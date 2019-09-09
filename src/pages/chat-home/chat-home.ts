@@ -1,12 +1,10 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, Events, Slides, IonicPage, NavParams, ToastController, Content } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
 
-import { Observable } from 'rxjs/Observable';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { ApiAuthService } from '../../services/apiAuthService';
 import { ApiStorageService } from '../../services/apiStorageService';
-import chatConfig from '../../assets/chat/chat-config';
 import Log from '../../assets/log/log-debug';
 
 var slideSelected = {
@@ -44,71 +42,20 @@ export class ChatHomePage {
 
   constructor(private formBuilder: FormBuilder,
     private apiService: ApiAuthService,
-    private events: Events,
-    private navCtrl: NavController,
     private apiStorage: ApiStorageService) { }
 
   ngOnInit() {
+    //ngăn không cho vuốt giữa các slide
     this.slides.lockSwipes(true);
+    //đặt ban đầu cho addFormGroup
     this.addFromGroup = this.formBuilder.group({
       room_name: '',
       image: '',
       message: '',
       time: ''
     });
-
+    //Lấy danh sách phòng đã lưu xuống đia
     this.rooms = this.apiStorage.getUserRooms(this.user);
-
-    this.getObserverable().subscribe(data => {
-      console.log('Observerable sau 5 giay: ', data);
-    })
-
-    this.getPromise().then(data => {
-      console.log('Promise sau 5 giay: ', data);
-    })
-
-    //su dung truyen du lieu tu form a-->b ben fom b phai khai dung su kien thi moi
-    this.events.publish(chatConfig.event_register_room, { data: 'chat' });
-
-
-    //chuyen slide khi su kien click group
-    //nguoc lai lang nghe su kien cua form khac truyen cho minh bang lenh 
-    this.events.subscribe(chatConfig.event_change_room, ((data) => {
-      console.log("Nhan tu form home: " + JSON.stringify(data));
-    }));
-
-    this.events.subscribe(chatConfig.event_chat_setting, (() => {
-      this.goToSlide(slideSelected.setting);
-    }));
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad' + this.slideIndex);
-  }
-
-  ionViewWillLeave() {
-    console.log('this.socket.disconnect()');
-  }
-
-  getObserverable() {
-    let observable = new Observable(observer => {
-      setTimeout(() => {
-        observer.next({
-          room_id: 'testID',
-          room_name: 'testName',
-        });
-      }, 5000);
-    });
-    return observable;
-  }
-
-  getPromise() {
-    let promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("123")
-      }, 5000);
-    });
-    return promise;
   }
 
   goToSlide(i) {
@@ -188,7 +135,6 @@ export class ChatHomePage {
     this.goToSlide(slideSelected.home);
   }
 
-
   sendMessage() {
     this.messages.push({
       user: this.user,
@@ -225,16 +171,19 @@ export class ChatHomePage {
     this.apiStorage.deleteUserRooms(this.user);
     alert("Da xoa!");
   }
+
   deleteMessage() {
     this.room.messages = [];
     this.apiStorage.saveUserRoomMessages(this.user, this.room);
     alert("Da xoa!");
   }
+
   show: boolean = false;
   showSearch() {
     this.show = !this.show;
     this.show ? this.title = "" : this.title = "CHAT HOME";
   }
+
   deleteRoom(name) {
     console.log(name);
   }

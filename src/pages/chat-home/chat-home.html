@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons start>
-      <button ion-button *ngIf="slideIndex==0" (click)="formAddRoom()">
+      <button ion-button *ngIf="slideIndex==0" (click)="formAddRoom()" icon-only>
         <ion-icon name="add-circle" ios="ios-add-circle" md="md-add-circle"></ion-icon>
       </button>
-      <button ion-button *ngIf="slideIndex==0" (click)="showSearch()">
+      <button ion-button *ngIf="slideIndex==0" (click)="showSearch()" icon-only>
         <ion-icon name="search" ios="ios-search" md="md-search"></ion-icon>
       </button>
       <button ion-button (click)="goToSlide(0)" *ngIf="slideIndex>0">
@@ -12,10 +12,10 @@
       </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button (click)="goSetting()">
+      <button ion-button (click)="goSetting()" icon-only>
         <ion-icon name="settings" ios="ios-settings" md="md-settings"></ion-icon>
       </button>
-      <button ion-button (click)="listUnread()">
+      <button ion-button (click)="listUnread()" icon-only>
         <ion-icon name="notifications" ios="ios-notifications" md="md-notifications"></ion-icon>
         <ion-badge color="danger" *ngIf="unreadCount > 0">{{ unreadCount }}</ion-badge>
       </button>
@@ -42,7 +42,7 @@
                 <ion-note>{{ room?.time | date:'dd.MM hh:mm' }}</ion-note>
               </button>
             </ion-item>
-            <ion-item-options side="right">
+            <ion-item-options>
               <button ion-button color="danger" (click)="deleteRoom(room.name)">
                 <ion-icon name="trash" ios="ios-trash"></ion-icon>
                 Delete
@@ -62,8 +62,7 @@
           <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username !== user?.username">
             <ion-item class="other-avatar">
               <ion-avatar item-start>
-                <img
-                  src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf('://')>0?message?.user?.image:(authenticationServer + '/get-avatar/' + message?.user?.image + '?token=' + token):image_default}}" />
+                <img src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf('://')>0?message?.user?.image:(authenticationServer + '/get-avatar/' + message?.user?.image + '?token=' + token):image_default}}" />
               </ion-avatar>
             </ion-item>
           </ion-col>
@@ -85,8 +84,7 @@
           <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username === user?.username">
             <ion-item class="other-avatar">
               <ion-avatar item-start>
-                <img
-                  src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf('://')>0?message?.user?.image:(authenticationServer + '/get-avatar/' + message?.user?.image + '?token=' + token):image_default}}" />
+                <img src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf('://')>0?message?.user?.image:(authenticationServer + '/get-avatar/' + message?.user?.image + '?token=' + token):image_default}}" />
               </ion-avatar>
             </ion-item>
           </ion-col>
@@ -98,7 +96,6 @@
 
     <!-- #id=2 them nhom -->
     <ion-slide>
-
       <form (ngSubmit)="onSubmit()" [formGroup]="addFromGroup" *ngIf="!(isShowInfo)">
         <ion-list>
           <ion-item>
@@ -129,7 +126,6 @@
           </ion-item>
         </ion-list>
       </form>
-
     </ion-slide>
 
     <!-- #id=3 setting -->
@@ -165,7 +161,7 @@
         </ion-item>
       </ion-col>
       <ion-col col-2>
-        <button ion-button type="button" round color="primary" (click)="sendMessage()" [disabled]="message === ''">
+        <button ion-button round color="primary" (click)="sendMessage()" [disabled]="message === ''">
           <ion-icon name="undo"></ion-icon>
         </button>
       </ion-col>

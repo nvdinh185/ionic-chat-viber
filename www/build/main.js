@@ -1,12 +1,12 @@
 webpackJsonp([0],{
 
-/***/ 133:
+/***/ 132:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApiStorageService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_webstorage_service__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_webstorage_service__ = __webpack_require__(249);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -114,7 +114,7 @@ var ApiStorageService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 160:
+/***/ 162:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -127,11 +127,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 160;
+webpackEmptyAsyncContext.id = 162;
 
 /***/ }),
 
-/***/ 201:
+/***/ 204:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -144,19 +144,18 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 201;
+webpackEmptyAsyncContext.id = 204;
 
 /***/ }),
 
-/***/ 245:
+/***/ 246:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chat_home_chat_home__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__test_test__ = __webpack_require__(295);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__chat_home_chat_home__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__test_test__ = __webpack_require__(297);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -169,20 +168,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, events) {
-        this.navCtrl = navCtrl;
-        this.events = events;
-        this.tab1Root = __WEBPACK_IMPORTED_MODULE_2__chat_home_chat_home__["a" /* ChatHomePage */];
-        this.tab2Root = __WEBPACK_IMPORTED_MODULE_3__test_test__["a" /* TestPage */];
-        this.tab3Root = __WEBPACK_IMPORTED_MODULE_2__chat_home_chat_home__["a" /* ChatHomePage */];
+    function HomePage() {
+        this.tab1Root = __WEBPACK_IMPORTED_MODULE_1__chat_home_chat_home__["a" /* ChatHomePage */];
+        this.tab2Root = __WEBPACK_IMPORTED_MODULE_2__test_test__["a" /* TestPage */];
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\dinh-chat-viber\src\pages\home\home.html"*/'<ion-tabs>\n\n  <ion-tab [root]="tab1Root" tabTitle="ChatHomePage" tabIcon="call"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabTitle="Test" tabIcon="information-circle"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\dinh-chat-viber\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\chat-viber\src\pages\home\home.html"*/'<ion-tabs>\n\n  <ion-tab [root]="tab1Root" tabTitle="ChatHomePage" tabIcon="call"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabTitle="Test" tabIcon="information-circle"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\chat-viber\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]])
+        __metadata("design:paramtypes", [])
     ], HomePage);
     return HomePage;
 }());
@@ -191,22 +186,18 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 246:
+/***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatHomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_apiAuthService__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_apiStorageService__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__assets_chat_chat_config__ = __webpack_require__(491);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__assets_chat_chat_config___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__assets_chat_chat_config__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__assets_log_log_debug__ = __webpack_require__(492);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__assets_log_log_debug___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__assets_log_log_debug__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_apiAuthService__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_apiStorageService__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__assets_log_log_debug__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__assets_log_log_debug___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__assets_log_log_debug__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -216,8 +207,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
 
 
 
@@ -231,11 +220,9 @@ var slideSelected = {
     setting: 3,
 };
 var ChatHomePage = /** @class */ (function () {
-    function ChatHomePage(formBuilder, apiService, events, navCtrl, apiStorage) {
+    function ChatHomePage(formBuilder, apiService, apiStorage) {
         this.formBuilder = formBuilder;
         this.apiService = apiService;
-        this.events = events;
-        this.navCtrl = navCtrl;
         this.apiStorage = apiStorage;
         this.slideIndex = 0;
         this.title = "CHAT HOME";
@@ -251,56 +238,17 @@ var ChatHomePage = /** @class */ (function () {
         this.show = false;
     }
     ChatHomePage.prototype.ngOnInit = function () {
-        var _this = this;
+        //ngăn không cho vuốt giữa các slide
         this.slides.lockSwipes(true);
+        //đặt ban đầu cho addFormGroup
         this.addFromGroup = this.formBuilder.group({
             room_name: '',
             image: '',
             message: '',
             time: ''
         });
+        //Lấy danh sách phòng đã lưu xuống đia
         this.rooms = this.apiStorage.getUserRooms(this.user);
-        this.getObserverable().subscribe(function (data) {
-            console.log('Observerable sau 5 giay: ', data);
-        });
-        this.getPromise().then(function (data) {
-            console.log('Promise sau 5 giay: ', data);
-        });
-        //su dung truyen du lieu tu form a-->b ben fom b phai khai dung su kien thi moi
-        this.events.publish(__WEBPACK_IMPORTED_MODULE_6__assets_chat_chat_config___default.a.event_register_room, { data: 'chat' });
-        //chuyen slide khi su kien click group
-        //nguoc lai lang nghe su kien cua form khac truyen cho minh bang lenh 
-        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_6__assets_chat_chat_config___default.a.event_change_room, (function (data) {
-            console.log("Nhan tu form home: " + JSON.stringify(data));
-        }));
-        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_6__assets_chat_chat_config___default.a.event_chat_setting, (function () {
-            _this.goToSlide(slideSelected.setting);
-        }));
-    };
-    ChatHomePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad' + this.slideIndex);
-    };
-    ChatHomePage.prototype.ionViewWillLeave = function () {
-        console.log('this.socket.disconnect()');
-    };
-    ChatHomePage.prototype.getObserverable = function () {
-        var observable = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
-            setTimeout(function () {
-                observer.next({
-                    room_id: 'testID',
-                    room_name: 'testName',
-                });
-            }, 5000);
-        });
-        return observable;
-    };
-    ChatHomePage.prototype.getPromise = function () {
-        var promise = new Promise(function (resolve, reject) {
-            setTimeout(function () {
-                resolve("123");
-            }, 5000);
-        });
-        return promise;
     };
     ChatHomePage.prototype.goToSlide = function (i) {
         this.slides.lockSwipes(false);
@@ -344,9 +292,9 @@ var ChatHomePage = /** @class */ (function () {
         alert("selectIcon");
     };
     ChatHomePage.prototype.callSendLog = function () {
-        __WEBPACK_IMPORTED_MODULE_7__assets_log_log_debug___default.a.print();
+        __WEBPACK_IMPORTED_MODULE_5__assets_log_log_debug___default.a.print();
         //Log.get(); -->for send
-        __WEBPACK_IMPORTED_MODULE_7__assets_log_log_debug___default.a.reset();
+        __WEBPACK_IMPORTED_MODULE_5__assets_log_log_debug___default.a.reset();
     };
     ChatHomePage.prototype.callLogout = function () {
         var _this = this;
@@ -414,37 +362,37 @@ var ChatHomePage = /** @class */ (function () {
         console.log(name);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Slides */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Slides */]) === "function" && _a || Object)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Slides */]),
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Slides */]) === "function" && _a || Object)
     ], ChatHomePage.prototype, "slides", void 0);
     ChatHomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-chat-home',template:/*ion-inline-start:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\dinh-chat-viber\src\pages\chat-home\chat-home.html"*/'<ion-header>\n\n  <ion-toolbar color="primary">\n\n    <ion-buttons start>\n\n      <button ion-button *ngIf="slideIndex==0" (click)="formAddRoom()">\n\n        <ion-icon name="add-circle" ios="ios-add-circle" md="md-add-circle"></ion-icon>\n\n      </button>\n\n      <button ion-button *ngIf="slideIndex==0" (click)="showSearch()">\n\n        <ion-icon name="search" ios="ios-search" md="md-search"></ion-icon>\n\n      </button>\n\n      <button ion-button (click)="goToSlide(0)" *ngIf="slideIndex>0">\n\n        <ion-icon name="arrow-back" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="goSetting()">\n\n        <ion-icon name="settings" ios="ios-settings" md="md-settings"></ion-icon>\n\n      </button>\n\n      <button ion-button (click)="listUnread()">\n\n        <ion-icon name="notifications" ios="ios-notifications" md="md-notifications"></ion-icon>\n\n        <ion-badge color="danger" *ngIf="unreadCount > 0">{{ unreadCount }}</ion-badge>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>{{ title }}</ion-title>\n\n    <ion-searchbar (ionInput)="getItems($event)" *ngIf="show && slideIndex==0"></ion-searchbar>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="list-avatar-page">\n\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <!-- #id=0 home -->\n\n    <ion-slide>\n\n      <ion-card>\n\n        <ion-list>\n\n          <ion-item-sliding *ngFor="let room of rooms">\n\n            <ion-item>\n\n              <button class="list-card" ion-item (click)="goRoom(room)">\n\n                <ion-avatar item-start>\n\n                  <img src="{{room.image?room.image:image_default}}">\n\n                </ion-avatar>\n\n                <h2 class="name">{{ room?.name }}</h2>\n\n                <p>{{ room?.message }}</p>\n\n                <ion-note>{{ room?.time | date:\'dd.MM hh:mm\' }}</ion-note>\n\n              </button>\n\n            </ion-item>\n\n            <ion-item-options side="right">\n\n              <button ion-button color="danger" (click)="deleteRoom(room.name)">\n\n                <ion-icon name="trash" ios="ios-trash"></ion-icon>\n\n                Delete\n\n              </button>\n\n            </ion-item-options>\n\n          </ion-item-sliding>\n\n        </ion-list>\n\n      </ion-card>\n\n      <button ion-button (click)="deleteAllRoom()" *ngIf="rooms.length>0">DELETE ALL ROOM</button>\n\n    </ion-slide>\n\n\n\n    <!-- #id=1 chatting -->\n\n    <ion-slide>\n\n      <button ion-button (click)="deleteMessage()" *ngIf="messages.length>0">DELETE MESSAGE</button>\n\n      <ion-grid>\n\n        <ion-row *ngFor="let message of messages">\n\n          <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username !== user?.username">\n\n            <ion-item class="other-avatar">\n\n              <ion-avatar item-start>\n\n                <img\n\n                  src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf(\'://\')>0?message?.user?.image:(authenticationServer + \'/get-avatar/\' + message?.user?.image + \'?token=\' + token):image_default}}" />\n\n              </ion-avatar>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col class="message other_message" offset-1 col-9 *ngIf="message?.user?.username !== user?.username">\n\n            <div class="nick-name">{{ message?.user?.username }}:</div>\n\n            <br>\n\n            <div class="text-message">{{ message?.text }}</div>\n\n            <br>\n\n            <div class="time">{{message?.created | date:\'dd.MM hh:mm\'}}</div>\n\n          </ion-col>\n\n\n\n          <ion-col class="message my_message" offset-1 col-9 *ngIf="message?.user?.username === user?.username">\n\n            <div class="nick-name">{{ message?.user?.username }}:</div>\n\n            <br>\n\n            <div class="text-message">{{ message?.text }}</div>\n\n            <br>\n\n            <div class="time">{{message?.created | date:\'dd.MM hh:mm\'}}</div>\n\n          </ion-col>\n\n          <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username === user?.username">\n\n            <ion-item class="other-avatar">\n\n              <ion-avatar item-start>\n\n                <img\n\n                  src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf(\'://\')>0?message?.user?.image:(authenticationServer + \'/get-avatar/\' + message?.user?.image + \'?token=\' + token):image_default}}" />\n\n              </ion-avatar>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-slide>\n\n\n\n\n\n    <!-- #id=2 them nhom -->\n\n    <ion-slide>\n\n\n\n      <form (ngSubmit)="onSubmit()" [formGroup]="addFromGroup" *ngIf="!(isShowInfo)">\n\n        <ion-list>\n\n          <ion-item>\n\n            <ion-icon name="leaf" item-start></ion-icon>\n\n            <ion-label floating>Tên nhóm</ion-label>\n\n            <ion-input type="text" formControlName="room_name"></ion-input>\n\n            <ion-icon name="add" item-end></ion-icon>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-icon name="leaf" item-start></ion-icon>\n\n            <ion-label floating>Nhap vao duong dan hinh anh</ion-label>\n\n            <ion-input type="text" formControlName="image"></ion-input>\n\n            <ion-icon name="add" item-end></ion-icon>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-icon name="leaf" item-start></ion-icon>\n\n            <ion-label floating>Tin nhan cuoi cung</ion-label>\n\n            <ion-input type="text" formControlName="message"></ion-input>\n\n            <ion-icon name="add" item-end></ion-icon>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-buttons start>\n\n              <button ion-button type="submit" icon-end round>\n\n                Them nhom\n\n                <ion-icon name="share-alt"></ion-icon>\n\n              </button>\n\n            </ion-buttons>\n\n          </ion-item>\n\n        </ion-list>\n\n      </form>\n\n\n\n    </ion-slide>\n\n\n\n    <!-- #id=3 setting -->\n\n    <ion-slide>\n\n      <ion-list no-lines>\n\n\n\n        <ion-item class=\'item-settings\' (click)="selectIcon()">\n\n          <ion-icon name="images" item-start></ion-icon>\n\n          Icons\n\n        </ion-item>\n\n        <ion-item class=\'item-settings\' (click)="callSendLog()">\n\n          <ion-icon name="add" item-start></ion-icon>\n\n          <ion-label>Send Log To Server</ion-label>\n\n        </ion-item>\n\n        <ion-item class=\'item-settings\' (click)="callLogout()">\n\n          <ion-icon name="add" item-start></ion-icon>\n\n          <ion-label>Logout</ion-label>\n\n        </ion-item>\n\n\n\n      </ion-list>\n\n    </ion-slide>\n\n\n\n  </ion-slides>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar *ngIf="slideIndex==1">\n\n    <ion-row class="message_row">\n\n      <ion-col col-10>\n\n        <ion-item no-lines>\n\n          <ion-input type="text" placeholder="Gõ nội dung tin nhắn cần gửi" [(ngModel)]="message"\n\n            (keyup.enter)="sendMessage()"></ion-input>\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <button ion-button type="button" round color="primary" (click)="sendMessage()" [disabled]="message === \'\'">\n\n          <ion-icon name="undo"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\dinh-chat-viber\src\pages\chat-home\chat-home.html"*/
+            selector: 'page-chat-home',template:/*ion-inline-start:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\chat-viber\src\pages\chat-home\chat-home.html"*/'<ion-header>\n\n  <ion-toolbar color="primary">\n\n    <ion-buttons start>\n\n      <button ion-button *ngIf="slideIndex==0" (click)="formAddRoom()" icon-only>\n\n        <ion-icon name="add-circle" ios="ios-add-circle" md="md-add-circle"></ion-icon>\n\n      </button>\n\n      <button ion-button *ngIf="slideIndex==0" (click)="showSearch()" icon-only>\n\n        <ion-icon name="search" ios="ios-search" md="md-search"></ion-icon>\n\n      </button>\n\n      <button ion-button (click)="goToSlide(0)" *ngIf="slideIndex>0">\n\n        <ion-icon name="arrow-back" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="goSetting()" icon-only>\n\n        <ion-icon name="settings" ios="ios-settings" md="md-settings"></ion-icon>\n\n      </button>\n\n      <button ion-button (click)="listUnread()" icon-only>\n\n        <ion-icon name="notifications" ios="ios-notifications" md="md-notifications"></ion-icon>\n\n        <ion-badge color="danger" *ngIf="unreadCount > 0">{{ unreadCount }}</ion-badge>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>{{ title }}</ion-title>\n\n    <ion-searchbar (ionInput)="getItems($event)" *ngIf="show && slideIndex==0"></ion-searchbar>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="list-avatar-page">\n\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <!-- #id=0 home -->\n\n    <ion-slide>\n\n      <ion-card>\n\n        <ion-list>\n\n          <ion-item-sliding *ngFor="let room of rooms">\n\n            <ion-item>\n\n              <button class="list-card" ion-item (click)="goRoom(room)">\n\n                <ion-avatar item-start>\n\n                  <img src="{{room.image?room.image:image_default}}">\n\n                </ion-avatar>\n\n                <h2 class="name">{{ room?.name }}</h2>\n\n                <p>{{ room?.message }}</p>\n\n                <ion-note>{{ room?.time | date:\'dd.MM hh:mm\' }}</ion-note>\n\n              </button>\n\n            </ion-item>\n\n            <ion-item-options>\n\n              <button ion-button color="danger" (click)="deleteRoom(room.name)">\n\n                <ion-icon name="trash" ios="ios-trash"></ion-icon>\n\n                Delete\n\n              </button>\n\n            </ion-item-options>\n\n          </ion-item-sliding>\n\n        </ion-list>\n\n      </ion-card>\n\n      <button ion-button (click)="deleteAllRoom()" *ngIf="rooms.length>0">DELETE ALL ROOM</button>\n\n    </ion-slide>\n\n\n\n    <!-- #id=1 chatting -->\n\n    <ion-slide>\n\n      <button ion-button (click)="deleteMessage()" *ngIf="messages.length>0">DELETE MESSAGE</button>\n\n      <ion-grid>\n\n        <ion-row *ngFor="let message of messages">\n\n          <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username !== user?.username">\n\n            <ion-item class="other-avatar">\n\n              <ion-avatar item-start>\n\n                <img src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf(\'://\')>0?message?.user?.image:(authenticationServer + \'/get-avatar/\' + message?.user?.image + \'?token=\' + token):image_default}}" />\n\n              </ion-avatar>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col class="message other_message" offset-1 col-9 *ngIf="message?.user?.username !== user?.username">\n\n            <div class="nick-name">{{ message?.user?.username }}:</div>\n\n            <br>\n\n            <div class="text-message">{{ message?.text }}</div>\n\n            <br>\n\n            <div class="time">{{message?.created | date:\'dd.MM hh:mm\'}}</div>\n\n          </ion-col>\n\n\n\n          <ion-col class="message my_message" offset-1 col-9 *ngIf="message?.user?.username === user?.username">\n\n            <div class="nick-name">{{ message?.user?.username }}:</div>\n\n            <br>\n\n            <div class="text-message">{{ message?.text }}</div>\n\n            <br>\n\n            <div class="time">{{message?.created | date:\'dd.MM hh:mm\'}}</div>\n\n          </ion-col>\n\n          <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username === user?.username">\n\n            <ion-item class="other-avatar">\n\n              <ion-avatar item-start>\n\n                <img src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf(\'://\')>0?message?.user?.image:(authenticationServer + \'/get-avatar/\' + message?.user?.image + \'?token=\' + token):image_default}}" />\n\n              </ion-avatar>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-slide>\n\n\n\n\n\n    <!-- #id=2 them nhom -->\n\n    <ion-slide>\n\n      <form (ngSubmit)="onSubmit()" [formGroup]="addFromGroup" *ngIf="!(isShowInfo)">\n\n        <ion-list>\n\n          <ion-item>\n\n            <ion-icon name="leaf" item-start></ion-icon>\n\n            <ion-label floating>Tên nhóm</ion-label>\n\n            <ion-input type="text" formControlName="room_name"></ion-input>\n\n            <ion-icon name="add" item-end></ion-icon>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-icon name="leaf" item-start></ion-icon>\n\n            <ion-label floating>Nhap vao duong dan hinh anh</ion-label>\n\n            <ion-input type="text" formControlName="image"></ion-input>\n\n            <ion-icon name="add" item-end></ion-icon>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-icon name="leaf" item-start></ion-icon>\n\n            <ion-label floating>Tin nhan cuoi cung</ion-label>\n\n            <ion-input type="text" formControlName="message"></ion-input>\n\n            <ion-icon name="add" item-end></ion-icon>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-buttons start>\n\n              <button ion-button type="submit" icon-end round>\n\n                Them nhom\n\n                <ion-icon name="share-alt"></ion-icon>\n\n              </button>\n\n            </ion-buttons>\n\n          </ion-item>\n\n        </ion-list>\n\n      </form>\n\n    </ion-slide>\n\n\n\n    <!-- #id=3 setting -->\n\n    <ion-slide>\n\n      <ion-list no-lines>\n\n\n\n        <ion-item class=\'item-settings\' (click)="selectIcon()">\n\n          <ion-icon name="images" item-start></ion-icon>\n\n          Icons\n\n        </ion-item>\n\n        <ion-item class=\'item-settings\' (click)="callSendLog()">\n\n          <ion-icon name="add" item-start></ion-icon>\n\n          <ion-label>Send Log To Server</ion-label>\n\n        </ion-item>\n\n        <ion-item class=\'item-settings\' (click)="callLogout()">\n\n          <ion-icon name="add" item-start></ion-icon>\n\n          <ion-label>Logout</ion-label>\n\n        </ion-item>\n\n\n\n      </ion-list>\n\n    </ion-slide>\n\n\n\n  </ion-slides>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar *ngIf="slideIndex==1">\n\n    <ion-row class="message_row">\n\n      <ion-col col-10>\n\n        <ion-item no-lines>\n\n          <ion-input type="text" placeholder="Gõ nội dung tin nhắn cần gửi" [(ngModel)]="message"\n\n            (keyup.enter)="sendMessage()"></ion-input>\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <button ion-button round color="primary" (click)="sendMessage()" [disabled]="message === \'\'">\n\n          <ion-icon name="undo"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\chat-viber\src\pages\chat-home\chat-home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_apiAuthService__["a" /* ApiAuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_apiAuthService__["a" /* ApiAuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* Events */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5__services_apiStorageService__["a" /* ApiStorageService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_apiStorageService__["a" /* ApiStorageService */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_apiAuthService__["a" /* ApiAuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_apiAuthService__["a" /* ApiAuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_apiStorageService__["a" /* ApiStorageService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_apiStorageService__["a" /* ApiStorageService */]) === "function" && _d || Object])
     ], ChatHomePage);
     return ChatHomePage;
-    var _a, _b, _c, _d, _e, _f;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=chat-home.js.map
 
 /***/ }),
 
-/***/ 247:
+/***/ 248:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApiAuthService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__apiStorageService__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__interceptors_requestInterceptor__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(372);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__apiStorageService__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__interceptors_requestInterceptor__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(376);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_node_rsa__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_node_rsa__ = __webpack_require__(377);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_node_rsa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_node_rsa__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jsonwebtoken__ = __webpack_require__(475);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jsonwebtoken__ = __webpack_require__(476);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jsonwebtoken___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jsonwebtoken__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -671,7 +619,7 @@ var ApiAuthService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 249:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -721,7 +669,7 @@ var RequestInterceptor = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 295:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -742,7 +690,7 @@ var TestPage = /** @class */ (function () {
     }
     TestPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-test',template:/*ion-inline-start:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\dinh-chat-viber\src\pages\test\test.html"*/'<ion-header>\n\n  <ion-toolbar color="primary">\n\n    <ion-buttons start>\n\n      <button ion-button showWhen="ios" icon-only>\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button color="secondary" icon-only>\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Primary</ion-title>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-toolbar>\n\n    <ion-title>This is the title that never ends. It just goes on and on my friend.</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-buttons start>\n\n      <button ion-button icon-only showWhen="ios">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button color="secondary" icon-only>\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Default</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="primary">\n\n    <ion-buttons start>\n\n      <button ion-button showWhen="ios" icon-only>\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button color="secondary" icon-only>\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Primary</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="primary">\n\n    <ion-buttons start>\n\n      <button ion-button showWhen="ios" icon-only class="activated">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-only class="activated">\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button color="secondary" icon-only class="activated">\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Primary.activated</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="secondary">\n\n    <ion-buttons start>\n\n      <button ion-button icon-only color="primary">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-start solid>\n\n        <ion-icon name="contact"></ion-icon>\n\n        Solid\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Secondary</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-end solid color="danger">\n\n        Help\n\n        <ion-icon name="help-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="secondary">\n\n    <ion-buttons start>\n\n      <button ion-button icon-only color="primary" class="activated">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-start solid class="activated">\n\n        <ion-icon name="contact"></ion-icon>\n\n        Solid\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Secondary Activated</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-end solid color="danger" class="activated">\n\n        Help\n\n        <ion-icon name="help-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="dark">\n\n    <ion-buttons start>\n\n      <button ion-button icon-only outline>\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-start outline>\n\n        <ion-icon name="star"></ion-icon>\n\n        Star\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only color="secondary" outline>\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Dark</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="dark">\n\n    <ion-buttons start>\n\n      <button ion-button outline icon-only class="activated">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button outline icon-start class="activated">\n\n        <ion-icon name="star"></ion-icon>\n\n        Star\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button color="secondary" outline icon-only class="activated">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Dark.activated</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="danger">\n\n    <ion-buttons start>\n\n      <button ion-button icon-start>\n\n        <ion-icon name="contact"></ion-icon>\n\n        Clear\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-end>\n\n        Edit\n\n        <ion-icon name="create"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Danger</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="danger">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-buttons start>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="star"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Danger</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="light">\n\n    <ion-buttons start>\n\n      <button ion-button icon-start>\n\n        <ion-icon name="contact"></ion-icon>\n\n        Clear\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-end>\n\n        Edit\n\n        <ion-icon name="create"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Light</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="light">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-buttons start>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="star"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Light</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar transparent>\n\n    <ion-buttons end>\n\n      <button ion-button #button1 icon-only (click)="buttonClick(button1)">\n\n        <ion-icon name="star"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Transparent</ion-title>\n\n    <button ion-button menuToggle right>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="greyYellow">\n\n    <ion-title>Grey Yellow</ion-title>\n\n  </ion-toolbar>\n\n  <ion-toolbar color="greyWhite">\n\n    <ion-title>Grey White</ion-title>\n\n  </ion-toolbar>\n\n</ion-content>'/*ion-inline-end:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\dinh-chat-viber\src\pages\test\test.html"*/
+            selector: 'page-test',template:/*ion-inline-start:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\chat-viber\src\pages\test\test.html"*/'<ion-header>\n\n  <ion-toolbar color="primary">\n\n    <ion-buttons start>\n\n      <button ion-button showWhen="ios" icon-only>\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button color="secondary" icon-only>\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Primary</ion-title>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-toolbar>\n\n    <ion-title>This is the title that never ends. It just goes on and on my friend.</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-buttons start>\n\n      <button ion-button icon-only showWhen="ios">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button color="secondary" icon-only>\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Default</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="primary">\n\n    <ion-buttons start>\n\n      <button ion-button showWhen="ios" icon-only>\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button color="secondary" icon-only>\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Primary</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="primary">\n\n    <ion-buttons start>\n\n      <button ion-button showWhen="ios" icon-only class="activated">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-only class="activated">\n\n        <ion-icon name="search"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button color="secondary" icon-only class="activated">\n\n        <ion-icon name="more"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Primary.activated</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="secondary">\n\n    <ion-buttons start>\n\n      <button ion-button icon-only color="primary">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-start solid>\n\n        <ion-icon name="contact"></ion-icon>\n\n        Solid\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Secondary</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-end solid color="danger">\n\n        Help\n\n        <ion-icon name="help-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="secondary">\n\n    <ion-buttons start>\n\n      <button ion-button icon-only color="primary" class="activated">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-start solid class="activated">\n\n        <ion-icon name="contact"></ion-icon>\n\n        Solid\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Secondary Activated</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-end solid color="danger" class="activated">\n\n        Help\n\n        <ion-icon name="help-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="dark">\n\n    <ion-buttons start>\n\n      <button ion-button icon-only outline>\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button icon-start outline>\n\n        <ion-icon name="star"></ion-icon>\n\n        Star\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only color="secondary" outline>\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Dark</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="dark">\n\n    <ion-buttons start>\n\n      <button ion-button outline icon-only class="activated">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n      <button ion-button outline icon-start class="activated">\n\n        <ion-icon name="star"></ion-icon>\n\n        Star\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button color="secondary" outline icon-only class="activated">\n\n        <ion-icon name="contact"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Dark.activated</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="danger">\n\n    <ion-buttons start>\n\n      <button ion-button icon-start>\n\n        <ion-icon name="contact"></ion-icon>\n\n        Clear\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-end>\n\n        Edit\n\n        <ion-icon name="create"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Danger</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="danger">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-buttons start>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="star"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Danger</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="light">\n\n    <ion-buttons start>\n\n      <button ion-button icon-start>\n\n        <ion-icon name="contact"></ion-icon>\n\n        Clear\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button icon-end>\n\n        Edit\n\n        <ion-icon name="create"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Light</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="light">\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-buttons start>\n\n      <button ion-button icon-only>\n\n        <ion-icon name="star"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Light</ion-title>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar transparent>\n\n    <ion-buttons end>\n\n      <button ion-button #button1 icon-only (click)="buttonClick(button1)">\n\n        <ion-icon name="star"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>Transparent</ion-title>\n\n    <button ion-button menuToggle right>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n  </ion-toolbar>\n\n\n\n  <ion-toolbar color="greyYellow">\n\n    <ion-title>Grey Yellow</ion-title>\n\n  </ion-toolbar>\n\n  <ion-toolbar color="greyWhite">\n\n    <ion-title>Grey White</ion-title>\n\n  </ion-toolbar>\n\n</ion-content>'/*ion-inline-end:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\chat-viber\src\pages\test\test.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], TestPage);
@@ -753,13 +701,13 @@ var TestPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 296:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(319);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -767,28 +715,28 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 317:
+/***/ 319:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(371);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_test_test__ = __webpack_require__(295);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_chat_home_chat_home__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angular_webstorage_service__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_apiStorageService__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_apiAuthService__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_apiImageService__ = __webpack_require__(493);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_apiChattingService__ = __webpack_require__(494);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__interceptors_requestInterceptor__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__interceptors_responseInterceptor__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(369);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(375);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_test_test__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_chat_home_chat_home__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angular_webstorage_service__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_apiStorageService__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_apiAuthService__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_apiImageService__ = __webpack_require__(495);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_apiChattingService__ = __webpack_require__(496);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__interceptors_requestInterceptor__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__interceptors_responseInterceptor__ = __webpack_require__(497);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -828,11 +776,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_10_angular_webstorage_service__["b" /* StorageServiceModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["c" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: []
                 })
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
@@ -859,7 +807,7 @@ var AppModule = /** @class */ (function () {
                 },
                 {
                     provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */],
-                    useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */]
+                    useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */]
                 }
             ]
         })
@@ -871,44 +819,28 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 371:
+/***/ 375:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_home_home__ = __webpack_require__(246);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
 
 
 var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
-        platform.ready().then(function () {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            statusBar.styleDefault();
-            splashScreen.hide();
-        });
+    function MyApp() {
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_1__pages_home_home__["a" /* HomePage */];
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\dinh-chat-viber\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>'/*ion-inline-end:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\dinh-chat-viber\src\app\app.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\chat-viber\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>'/*ion-inline-end:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\chat-viber\src\app\app.html"*/
+        })
     ], MyApp);
     return MyApp;
 }());
@@ -917,66 +849,35 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 377:
+/***/ 381:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 379:
+/***/ 383:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 414:
+/***/ 418:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 415:
+/***/ 419:
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
 
-/***/ 491:
-/***/ (function(module, exports) {
-
-module.exports = {
-    userType: '$U#',
-    roomType: '$R#',
-    client_join_room:'verify-user-room-token',
-    server_reply_room: 'server-send-room-chating',
-    client_send_message: 'client-send-message',
-    server_emit_message: 'server-emit-message',
-    client_send_old_message_to_new_user: 'client-send-old-message',
-    server_emit_old_message_to_new_user: 'server-emit-old-message',
-
-    server_emit_users_change: 'server-emit-users-change',
-    server_send_user_left: 'server_send_user_left',
-    client_send_session_to_new_user: 'client_send_session_to_new_user',
-    server_emit_old_user_to_new_user: 'server_emit_old_user_to_new_user',
-    
-    event_login:'event-login-ok',
-    event_register_room: 'register-chat-rooms',
-    event_change_room:'change-room',
-    event_joined_room:'joined-room',
-    event_logout: 'logout',
-    event_chat_setting: 'event_chat_setting',
-    event_chat_search: 'event_chat_search',
-    event_chat_add_group:'event_chat_add_group',
-
-  };
-
-/***/ }),
-
-/***/ 492:
+/***/ 494:
 /***/ (function(module, exports) {
 
 var log = '' //telemetry log
@@ -993,7 +894,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 493:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1067,7 +968,7 @@ var ApiImageService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 494:
+/***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1103,15 +1004,15 @@ var ApiChattingService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 495:
+/***/ 497:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResponseInterceptor; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do__ = __webpack_require__(496);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do__ = __webpack_require__(498);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http___ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http___ = __webpack_require__(74);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1151,5 +1052,5 @@ var ResponseInterceptor = /** @class */ (function () {
 
 /***/ })
 
-},[296]);
+},[298]);
 //# sourceMappingURL=main.js.map
