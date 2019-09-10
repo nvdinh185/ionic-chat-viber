@@ -196,7 +196,7 @@ var HomePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_apiAuthService__ = __webpack_require__(248);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_apiStorageService__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__assets_log_log_debug__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__assets_log_log_debug__ = __webpack_require__(493);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__assets_log_log_debug___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__assets_log_log_debug__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -237,10 +237,13 @@ var ChatHomePage = /** @class */ (function () {
         this.rooms = [];
         this.show = false;
     }
+    /**
+     * Lấy danh sách phòng đã lưu xuống đĩa
+     */
     ChatHomePage.prototype.ngOnInit = function () {
         //ngăn không cho vuốt giữa các slide
         this.slides.lockSwipes(true);
-        //đặt ban đầu cho addFormGroup
+        //gán ban đầu cho addFormGroup
         this.addFromGroup = this.formBuilder.group({
             room_name: '',
             image: '',
@@ -250,11 +253,18 @@ var ChatHomePage = /** @class */ (function () {
         //Lấy danh sách phòng đã lưu xuống đia
         this.rooms = this.apiStorage.getUserRooms(this.user);
     };
+    /**
+     * Di chuyển đến slide nào đó
+     * @param i
+     */
     ChatHomePage.prototype.goToSlide = function (i) {
         this.slides.lockSwipes(false);
         this.slides.slideTo(i, 500);
         this.slides.lockSwipes(true);
     };
+    /**
+     * Khi thay đổi slide thì lấy chỉ số slide và đặt tên cho titile
+     */
     ChatHomePage.prototype.slideChanged = function () {
         this.slideIndex = this.slides.getActiveIndex();
         switch (this.slideIndex) {
@@ -272,6 +282,9 @@ var ChatHomePage = /** @class */ (function () {
                 break;
         }
     };
+    /**
+     * Thêm phòng
+     */
     ChatHomePage.prototype.formAddRoom = function () {
         this.addFromGroup = this.formBuilder.group({
             room_name: '',
@@ -281,6 +294,9 @@ var ChatHomePage = /** @class */ (function () {
         });
         this.goToSlide(2);
     };
+    /**
+     * Đi đến slide cài đặt
+     */
     ChatHomePage.prototype.goSetting = function () {
         this.goToSlide(3);
     };
@@ -304,11 +320,20 @@ var ChatHomePage = /** @class */ (function () {
         })
             .catch(function (e) { });
     };
+    /**
+     * Lấy danh sách tin nhắn của phòng và di chuyển đến slide chatting
+     * để hiện các tin nhắn của phòng đó
+     * Tham số vào là thông tin phòng muốn di chuyển tới
+     * @param room
+     */
     ChatHomePage.prototype.goRoom = function (room) {
         this.room = room;
         this.messages = this.apiStorage.getUserRoomMessages(this.user, this.room);
         this.goToSlide(slideSelected.chatting);
     };
+    /**
+     * Lưu thông tin phòng mới vào đĩa
+     */
     ChatHomePage.prototype.onSubmit = function () {
         this.rooms.push({
             name: this.addFromGroup.value.room_name,
@@ -320,6 +345,10 @@ var ChatHomePage = /** @class */ (function () {
         this.apiStorage.saveUserRooms(this.user, this.rooms);
         this.goToSlide(slideSelected.home);
     };
+    /**
+     * Lấy nội dung chat để thêm vào danh sách chat đang có,
+     * đồng thời lưu danh sách chat này xuống đĩa
+     */
     ChatHomePage.prototype.sendMessage = function () {
         this.messages.push({
             user: this.user,
@@ -336,6 +365,10 @@ var ChatHomePage = /** @class */ (function () {
         this.message = '';
         this.room.messages = [];
     };
+    /**
+     * Hàm này khi thực hiện chức năng search-bar
+     * @param event
+     */
     ChatHomePage.prototype.getItems = function (event) {
         this.rooms = this.apiStorage.getUserRooms(this.user);
         var val = event.target.value;
@@ -345,15 +378,26 @@ var ChatHomePage = /** @class */ (function () {
             });
         }
     };
+    /**
+     * Xóa tất cả các phòng đã lưu trong đĩa
+     */
     ChatHomePage.prototype.deleteAllRoom = function () {
         this.apiStorage.deleteUserRooms(this.user);
         alert("Da xoa!");
     };
+    /**
+     * Xóa tin nhắn của phòng hiện tại đã lưu trong đĩa
+     * Bằng cách gán mảng tin nhắn đó bằng []
+     * rồi sau đó thực hiện lưu mảng này xuống đĩa
+     */
     ChatHomePage.prototype.deleteMessage = function () {
         this.room.messages = [];
         this.apiStorage.saveUserRoomMessages(this.user, this.room);
         alert("Da xoa!");
     };
+    /**
+     * Hiện cửa sổ search-bar
+     */
     ChatHomePage.prototype.showSearch = function () {
         this.show = !this.show;
         this.show ? this.title = "" : this.title = "CHAT HOME";
@@ -363,16 +407,17 @@ var ChatHomePage = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Slides */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Slides */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Slides */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Slides */])
     ], ChatHomePage.prototype, "slides", void 0);
     ChatHomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-chat-home',template:/*ion-inline-start:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\chat-viber\src\pages\chat-home\chat-home.html"*/'<ion-header>\n\n  <ion-toolbar color="primary">\n\n    <ion-buttons start>\n\n      <button ion-button *ngIf="slideIndex==0" (click)="formAddRoom()" icon-only>\n\n        <ion-icon name="add-circle" ios="ios-add-circle" md="md-add-circle"></ion-icon>\n\n      </button>\n\n      <button ion-button *ngIf="slideIndex==0" (click)="showSearch()" icon-only>\n\n        <ion-icon name="search" ios="ios-search" md="md-search"></ion-icon>\n\n      </button>\n\n      <button ion-button (click)="goToSlide(0)" *ngIf="slideIndex>0">\n\n        <ion-icon name="arrow-back" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-buttons end>\n\n      <button ion-button (click)="goSetting()" icon-only>\n\n        <ion-icon name="settings" ios="ios-settings" md="md-settings"></ion-icon>\n\n      </button>\n\n      <button ion-button (click)="listUnread()" icon-only>\n\n        <ion-icon name="notifications" ios="ios-notifications" md="md-notifications"></ion-icon>\n\n        <ion-badge color="danger" *ngIf="unreadCount > 0">{{ unreadCount }}</ion-badge>\n\n      </button>\n\n    </ion-buttons>\n\n    <ion-title>{{ title }}</ion-title>\n\n    <ion-searchbar (ionInput)="getItems($event)" *ngIf="show && slideIndex==0"></ion-searchbar>\n\n  </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content class="list-avatar-page">\n\n  <ion-slides (ionSlideDidChange)="slideChanged()">\n\n    <!-- #id=0 home -->\n\n    <ion-slide>\n\n      <ion-card>\n\n        <ion-list>\n\n          <ion-item-sliding *ngFor="let room of rooms">\n\n            <ion-item>\n\n              <button class="list-card" ion-item (click)="goRoom(room)">\n\n                <ion-avatar item-start>\n\n                  <img src="{{room.image?room.image:image_default}}">\n\n                </ion-avatar>\n\n                <h2 class="name">{{ room?.name }}</h2>\n\n                <p>{{ room?.message }}</p>\n\n                <ion-note>{{ room?.time | date:\'dd.MM hh:mm\' }}</ion-note>\n\n              </button>\n\n            </ion-item>\n\n            <ion-item-options>\n\n              <button ion-button color="danger" (click)="deleteRoom(room.name)">\n\n                <ion-icon name="trash" ios="ios-trash"></ion-icon>\n\n                Delete\n\n              </button>\n\n            </ion-item-options>\n\n          </ion-item-sliding>\n\n        </ion-list>\n\n      </ion-card>\n\n      <button ion-button (click)="deleteAllRoom()" *ngIf="rooms.length>0">DELETE ALL ROOM</button>\n\n    </ion-slide>\n\n\n\n    <!-- #id=1 chatting -->\n\n    <ion-slide>\n\n      <button ion-button (click)="deleteMessage()" *ngIf="messages.length>0">DELETE MESSAGE</button>\n\n      <ion-grid>\n\n        <ion-row *ngFor="let message of messages">\n\n          <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username !== user?.username">\n\n            <ion-item class="other-avatar">\n\n              <ion-avatar item-start>\n\n                <img src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf(\'://\')>0?message?.user?.image:(authenticationServer + \'/get-avatar/\' + message?.user?.image + \'?token=\' + token):image_default}}" />\n\n              </ion-avatar>\n\n            </ion-item>\n\n          </ion-col>\n\n          <ion-col class="message other_message" offset-1 col-9 *ngIf="message?.user?.username !== user?.username">\n\n            <div class="nick-name">{{ message?.user?.username }}:</div>\n\n            <br>\n\n            <div class="text-message">{{ message?.text }}</div>\n\n            <br>\n\n            <div class="time">{{message?.created | date:\'dd.MM hh:mm\'}}</div>\n\n          </ion-col>\n\n\n\n          <ion-col class="message my_message" offset-1 col-9 *ngIf="message?.user?.username === user?.username">\n\n            <div class="nick-name">{{ message?.user?.username }}:</div>\n\n            <br>\n\n            <div class="text-message">{{ message?.text }}</div>\n\n            <br>\n\n            <div class="time">{{message?.created | date:\'dd.MM hh:mm\'}}</div>\n\n          </ion-col>\n\n          <ion-col class="other-avatar" col-2 *ngIf="message?.user?.username === user?.username">\n\n            <ion-item class="other-avatar">\n\n              <ion-avatar item-start>\n\n                <img src="{{message?.user?.image?message?.user?.image.toLowerCase().indexOf(\'://\')>0?message?.user?.image:(authenticationServer + \'/get-avatar/\' + message?.user?.image + \'?token=\' + token):image_default}}" />\n\n              </ion-avatar>\n\n            </ion-item>\n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n    </ion-slide>\n\n\n\n\n\n    <!-- #id=2 them nhom -->\n\n    <ion-slide>\n\n      <form (ngSubmit)="onSubmit()" [formGroup]="addFromGroup" *ngIf="!(isShowInfo)">\n\n        <ion-list>\n\n          <ion-item>\n\n            <ion-icon name="leaf" item-start></ion-icon>\n\n            <ion-label floating>Tên nhóm</ion-label>\n\n            <ion-input type="text" formControlName="room_name"></ion-input>\n\n            <ion-icon name="add" item-end></ion-icon>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-icon name="leaf" item-start></ion-icon>\n\n            <ion-label floating>Nhap vao duong dan hinh anh</ion-label>\n\n            <ion-input type="text" formControlName="image"></ion-input>\n\n            <ion-icon name="add" item-end></ion-icon>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-icon name="leaf" item-start></ion-icon>\n\n            <ion-label floating>Tin nhan cuoi cung</ion-label>\n\n            <ion-input type="text" formControlName="message"></ion-input>\n\n            <ion-icon name="add" item-end></ion-icon>\n\n          </ion-item>\n\n          <ion-item>\n\n            <ion-buttons start>\n\n              <button ion-button type="submit" icon-end round>\n\n                Them nhom\n\n                <ion-icon name="share-alt"></ion-icon>\n\n              </button>\n\n            </ion-buttons>\n\n          </ion-item>\n\n        </ion-list>\n\n      </form>\n\n    </ion-slide>\n\n\n\n    <!-- #id=3 setting -->\n\n    <ion-slide>\n\n      <ion-list no-lines>\n\n\n\n        <ion-item class=\'item-settings\' (click)="selectIcon()">\n\n          <ion-icon name="images" item-start></ion-icon>\n\n          Icons\n\n        </ion-item>\n\n        <ion-item class=\'item-settings\' (click)="callSendLog()">\n\n          <ion-icon name="add" item-start></ion-icon>\n\n          <ion-label>Send Log To Server</ion-label>\n\n        </ion-item>\n\n        <ion-item class=\'item-settings\' (click)="callLogout()">\n\n          <ion-icon name="add" item-start></ion-icon>\n\n          <ion-label>Logout</ion-label>\n\n        </ion-item>\n\n\n\n      </ion-list>\n\n    </ion-slide>\n\n\n\n  </ion-slides>\n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar *ngIf="slideIndex==1">\n\n    <ion-row class="message_row">\n\n      <ion-col col-10>\n\n        <ion-item no-lines>\n\n          <ion-input type="text" placeholder="Gõ nội dung tin nhắn cần gửi" [(ngModel)]="message"\n\n            (keyup.enter)="sendMessage()"></ion-input>\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-2>\n\n        <button ion-button round color="primary" (click)="sendMessage()" [disabled]="message === \'\'">\n\n          <ion-icon name="undo"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"D:\DINHNV\MyData\LapTrinhDiDong\IONIC_Baitap\chat-viber\src\pages\chat-home\chat-home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_apiAuthService__["a" /* ApiAuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_apiAuthService__["a" /* ApiAuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_apiStorageService__["a" /* ApiStorageService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_apiStorageService__["a" /* ApiStorageService */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_3__services_apiAuthService__["a" /* ApiAuthService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_apiStorageService__["a" /* ApiStorageService */]])
     ], ChatHomePage);
     return ChatHomePage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=chat-home.js.map
@@ -733,10 +778,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_angular_webstorage_service__ = __webpack_require__(249);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_apiStorageService__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_apiAuthService__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_apiImageService__ = __webpack_require__(495);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_apiChattingService__ = __webpack_require__(496);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_apiImageService__ = __webpack_require__(494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_apiChattingService__ = __webpack_require__(495);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__interceptors_requestInterceptor__ = __webpack_require__(250);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__interceptors_responseInterceptor__ = __webpack_require__(497);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__interceptors_responseInterceptor__ = __webpack_require__(496);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -877,7 +922,7 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 494:
+/***/ 493:
 /***/ (function(module, exports) {
 
 var log = '' //telemetry log
@@ -894,7 +939,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 495:
+/***/ 494:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -968,7 +1013,7 @@ var ApiImageService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 496:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1004,13 +1049,13 @@ var ApiChattingService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 497:
+/***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResponseInterceptor; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do__ = __webpack_require__(498);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do__ = __webpack_require__(497);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http___ = __webpack_require__(74);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

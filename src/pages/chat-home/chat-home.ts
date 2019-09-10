@@ -44,10 +44,13 @@ export class ChatHomePage {
     private apiService: ApiAuthService,
     private apiStorage: ApiStorageService) { }
 
+  /**
+   * Lấy danh sách phòng đã lưu xuống đĩa
+   */
   ngOnInit() {
     //ngăn không cho vuốt giữa các slide
     this.slides.lockSwipes(true);
-    //đặt ban đầu cho addFormGroup
+    //gán ban đầu cho addFormGroup
     this.addFromGroup = this.formBuilder.group({
       room_name: '',
       image: '',
@@ -58,12 +61,19 @@ export class ChatHomePage {
     this.rooms = this.apiStorage.getUserRooms(this.user);
   }
 
+  /**
+   * Di chuyển đến slide nào đó
+   * @param i 
+   */
   goToSlide(i) {
     this.slides.lockSwipes(false);
     this.slides.slideTo(i, 500);
     this.slides.lockSwipes(true);
   }
 
+  /**
+   * Khi thay đổi slide thì lấy chỉ số slide và đặt tên cho titile
+   */
   slideChanged() {
     this.slideIndex = this.slides.getActiveIndex();
     switch (this.slideIndex) {
@@ -78,6 +88,9 @@ export class ChatHomePage {
     }
   }
 
+  /**
+   * Thêm phòng
+   */
   formAddRoom() {
     this.addFromGroup = this.formBuilder.group({
       room_name: '',
@@ -88,6 +101,9 @@ export class ChatHomePage {
     this.goToSlide(2);
   }
 
+  /**
+   * Đi đến slide cài đặt
+   */
   goSetting() {
     this.goToSlide(3);
   }
@@ -115,12 +131,21 @@ export class ChatHomePage {
       .catch(e => { });
   }
 
+  /**
+   * Lấy danh sách tin nhắn của phòng và di chuyển đến slide chatting
+   * để hiện các tin nhắn của phòng đó
+   * Tham số vào là thông tin phòng muốn di chuyển tới
+   * @param room 
+   */
   goRoom(room) {
     this.room = room;
     this.messages = this.apiStorage.getUserRoomMessages(this.user, this.room);
     this.goToSlide(slideSelected.chatting);
   }
 
+  /**
+   * Lưu thông tin phòng mới vào đĩa
+   */
   onSubmit() {
     this.rooms.push({
       name: this.addFromGroup.value.room_name,
@@ -135,6 +160,10 @@ export class ChatHomePage {
     this.goToSlide(slideSelected.home);
   }
 
+  /**
+   * Lấy nội dung chat để thêm vào danh sách chat đang có,
+   * đồng thời lưu danh sách chat này xuống đĩa
+   */
   sendMessage() {
     this.messages.push({
       user: this.user,
@@ -156,6 +185,10 @@ export class ChatHomePage {
     this.room.messages = [];
   }
 
+  /**
+   * Hàm này khi thực hiện chức năng search-bar
+   * @param event 
+   */
   getItems(event) {
     this.rooms = this.apiStorage.getUserRooms(this.user);
     var val = event.target.value;
@@ -167,11 +200,19 @@ export class ChatHomePage {
     }
   }
 
+  /**
+   * Xóa tất cả các phòng đã lưu trong đĩa
+   */
   deleteAllRoom() {
     this.apiStorage.deleteUserRooms(this.user);
     alert("Da xoa!");
   }
 
+  /**
+   * Xóa tin nhắn của phòng hiện tại đã lưu trong đĩa
+   * Bằng cách gán mảng tin nhắn đó bằng []
+   * rồi sau đó thực hiện lưu mảng này xuống đĩa
+   */
   deleteMessage() {
     this.room.messages = [];
     this.apiStorage.saveUserRoomMessages(this.user, this.room);
@@ -179,6 +220,9 @@ export class ChatHomePage {
   }
 
   show: boolean = false;
+  /**
+   * Hiện cửa sổ search-bar
+   */
   showSearch() {
     this.show = !this.show;
     this.show ? this.title = "" : this.title = "CHAT HOME";
